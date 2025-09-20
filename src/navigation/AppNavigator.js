@@ -12,7 +12,19 @@ const Drawer = createDrawerNavigator();
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Inicio">
+      <Drawer.Navigator initialRouteName="Inicio"
+        screenOptions={{
+          drawerStyle: {
+            backgroundColor: "#1e1e2d", // 🔹 aquí cambias el color de fondo
+          },
+          drawerActiveTintColor: "#fff",   // color del texto del item activo
+          drawerInactiveTintColor: "#ccc", // color del texto del item inactivo
+          headerStyle: {
+            backgroundColor: "#1e1e2d", // Fondo del header
+            },
+          headerTintColor: "#ffffff", 
+        }}
+      >
         <Drawer.Screen name="Inicio" component={DashboardScreen} />
         <Drawer.Screen name="Nuevo Registro" component={NuevoRegistroScreen} />
         <Drawer.Screen name="Mostrar Registros" component={MostrarRegistrosScreen} />

@@ -4,7 +4,7 @@ export const globalStyles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#bdebceff',
     },
     title: {
         fontSize: 28,
@@ -38,7 +38,7 @@ export const globalStyles = StyleSheet.create({
         marginBottom: 10,
     },
     card: {
-        backgroundColor: 'white',
+        backgroundColor: '#85d4c4ff',
         borderRadius: 8,
         padding: 15,
         marginBottom: 15,
