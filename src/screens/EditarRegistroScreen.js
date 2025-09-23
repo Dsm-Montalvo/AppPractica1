@@ -23,15 +23,15 @@ const EditarRegistroScreen = ({ route, navigation }) => {
     const validarFormulario = () => {
          const hoy = new Date();
         hoy.setHours(0, 0, 0, 0);
-        const nombreRegex = /^[a-zA-Z\s]+$/;
+        const nombreRegex = /^[a-zA-ZñÑ\s\-.]+$/;
         if (!nombre.trim() || !nombreRegex.test(nombre.trim())) {
             setError('Nombre inválido.');
             return false;
         }
         const fechaSeleccionada = new Date(fecha);
         fechaSeleccionada.setHours(0, 0, 0, 0);
-        if (fechaSeleccionada.getTime() >= hoy.getTime()) {
-            setError('La fecha no puede ser hoy o futura.');
+        if (fechaSeleccionada.getTime() > hoy.getTime()) {
+            setError('La fecha no puede ser futura.');
             return false;
         }
         if (hoy.getFullYear() - fechaSeleccionada.getFullYear() > 120) {

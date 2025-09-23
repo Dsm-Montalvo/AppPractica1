@@ -15,7 +15,7 @@ const NuevoRegistroScreen = ({ navigation }) => {
         hoy.setHours(0, 0, 0, 0); // Ignorar la hora para la comparación
 
         // Validar nombre
-        const nombreRegex = /^[a-zA-Z\s]+$/;
+        const nombreRegex = /^[a-zA-ZñÑ\s\-.]+$/;
         if (!nombre.trim()) {
             setError('El nombre no puede estar vacío.');
             return false;
@@ -29,8 +29,8 @@ const NuevoRegistroScreen = ({ navigation }) => {
         const fechaSeleccionada = new Date(fecha);
         fechaSeleccionada.setHours(0, 0, 0, 0);
 
-        if (fechaSeleccionada.getTime() >= hoy.getTime()) {
-            setError('La fecha de nacimiento no puede ser hoy o una fecha futura.');
+        if (fechaSeleccionada.getTime() > hoy.getTime()) {
+            setError('La fecha de nacimiento no puede ser una fecha futura.');
             return false;
         }
         const edad = hoy.getFullYear() - fechaSeleccionada.getFullYear();

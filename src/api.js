@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const baseURL = 'http://10.0.2.2:3000';
+const baseURL = 'https://api-app-1el0.onrender.com'; 
 
 const api = axios.create({
   baseURL: `${baseURL}/registros`,
